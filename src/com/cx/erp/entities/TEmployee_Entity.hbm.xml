@@ -30,5 +30,10 @@
         <property name="gender">
             <column name="gender" sql-type="char(2)" length="2" not-null="true"/>
         </property>
+
+        <many-to-one name="nation" class="com.cx.erp.entities.TListNation_Entity">
+            <column name="fk_nation_id"/>
+        </many-to-one>
+
     </class>
 </hibernate-mapping>
