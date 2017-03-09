@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cx.erp.entities.TListNation_Entity" table="t_list_nation" schema="person">
+        <id name="id">
+            <column name="id" sql-type="int(5)"/>
+            <generator class="native"></generator>
+        </id>
+        <property name="nation">
+            <column name="nation" sql-type="char(10)" length="10" not-null="true"/>
+        </property>
+        <property name="nationNo">
+            <column name="nation_no" sql-type="char(2)" length="2" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

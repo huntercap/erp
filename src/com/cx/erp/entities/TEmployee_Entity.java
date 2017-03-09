@@ -17,6 +17,18 @@ public class TEmployee_Entity {
     private String endowmentNo;
     private String gender;
 
+    private TListNation_Entity nation;
+
+    public TListNation_Entity getNation() {
+        return nation;
+    }
+
+    public void setNation(TListNation_Entity nation) {
+        this.nation = nation;
+    }
+
+
+
 
     public Integer getId() {
         return id;

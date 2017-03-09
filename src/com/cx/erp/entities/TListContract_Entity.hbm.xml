@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cx.erp.entities.TListContract_Entity" table="t_list_contract" schema="person">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="contractType">
+            <column name="contract_type" sql-type="char(20)" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

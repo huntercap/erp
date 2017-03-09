@@ -58,6 +58,7 @@
             <td>id</td>
             <td>fullName</td>
             <td>gender</td>
+            <td>民族</td>
             <td>birthDate</td>
             <td>jobNo</td>
             <td>salaryId</td>
@@ -71,6 +72,8 @@
                 <td>${id}</td>
                 <td>${fullName}</td>
                 <td>${gender}</td>
+                <td>${nation.nation}</td>
+
                 <%--format值中年月日格式化format="yyyy-MM-dd"，
                 月一定要用大写"MM",小写“m”表示秒--%>
                 <td>
@@ -80,6 +83,7 @@
                 <td>${salaryId}</td>
                 <td>${idNo}</td>
                 <td>${endowmentNo}</td>
+
                <%-- <td>${department.departmentName}</td>--%>
                 <td>
                     <a href="emp-delete?id=${id} " class="delete">删除</a>

@@ -10,7 +10,7 @@ import java.util.List;
 public class EmployeeDao extends BaseDao {
 
     public List<TEmployee_Entity> getAll(){
-        String hql = "from TEmployee_Entity";
+        String hql = "from TEmployee_Entity e left outer join FETCH e.nation";
         return getSession().createQuery(hql).list();
     }
 }
