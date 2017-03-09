@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--bean里的属性id和 ，property中的ref值一定要用小写开头的属性值
+否则spring无法注入-->
+<bean id="employeeDao" class="com.cx.erp.dao.EmployeeDao">
+    <property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+
+<bean id="employeeService" class="com.cx.erp.service.EmployeeService">
+    <property name="employeeDao" ref="employeeDao"></property>
+</bean>
+
+<bean id="employeeAction" class="com.cx.erp.action.EmployeeAction"
+      scope="prototype">
+    <property name="employeeService" ref="employeeService"></property>
+</bean>
+
+</beans>

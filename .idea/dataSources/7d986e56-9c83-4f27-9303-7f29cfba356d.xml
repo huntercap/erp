@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - person@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="person">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="dba"/>
+    <schema id="3" name="information_schema"/>
+    <schema id="4" name="mysql"/>
+    <schema id="5" name="performance_schema"/>
+    <schema id="6" name="persontest"/>
+    <schema id="7" name="sakila"/>
+    <schema id="8" name="spring6"/>
+    <schema id="9" name="sys"/>
+    <schema id="10" name="world"/>
+    <table id="11" parent="1" name="t_department_tree"/>
+    <table id="12" parent="1" name="t_employee"/>
+    <table id="13" parent="1" name="t_entry_info"/>
+    <table id="14" parent="1" name="t_list_contract"/>
+    <table id="15" parent="1" name="t_list_formation_type"/>
+    <table id="16" parent="1" name="t_list_nation"/>
+    <table id="17" parent="1" name="t_list_state"/>
+    <table id="18" parent="1" name="t_person_dep"/>
+    <table id="19" parent="1" name="t_person_state_info"/>
+    <table id="20" parent="1" name="t_person_type_info"/>
+    <view id="21" parent="1" name="v_department_tree">
+      <comment>VIEW</comment>
+    </view>
+    <view id="22" parent="1" name="v_per_dep">
+      <comment>VIEW</comment>
+    </view>
+    <view id="23" parent="1" name="v_person_endstate">
+      <comment>VIEW</comment>
+    </view>
+    <column id="24" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="25" parent="11" name="number">
+      <data-type>char(13)|0</data-type>
+    </column>
+    <column id="26" parent="11" name="dep_name">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="27" parent="11" name="up_dep_id">
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="28" parent="11" name="work_guided_from_id">
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="29" parent="11" name="set_as">
+      <data-type>char(4)|0</data-type>
+    </column>
+    <column id="30" parent="11" name="start_on">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="31" parent="11" name="approval_doc">
+      <data-type>longblob|0</data-type>
+    </column>
+    <column id="32" parent="11" name="approval_doc_no">
+      <data-type>char(20)|0</data-type>
+    </column>
+    <column id="33" parent="11" name="description">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="34" parent="11" name="in_use">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <key id="35" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="36" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="37" parent="12" name="job_no">
+      <data-type>char(10)|0</data-type>
+    </column>
+    <column id="38" parent="12" name="salary_id">
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="39" parent="12" name="full_name">
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="40" parent="12" name="id_no">
+      <mandatory>1</mandatory>
+      <data-type>char(18)|0</data-type>
+    </column>
+    <column id="41" parent="12" name="birth_date">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="42" parent="12" name="fk_nation_id">
+      <data-type>int(3)|0</data-type>
+    </column>
+    <column id="43" parent="12" name="fk_contract_id">
+      <data-type>int(2)|0</data-type>
+    </column>
+    <column id="44" parent="12" name="endowment_no">
+      <data-type>char(20)|0</data-type>
+    </column>
+    <column id="45" parent="12" name="gender">
+      <data-type>char(2)|0</data-type>
+    </column>
+    <index id="46" parent="12" name="FK_emp_re_contract">
+      <columns>fk_contract_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="47" parent="12" name="FK_t_employee">
+      <columns>fk_nation_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="48" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="49" parent="12" name="FK_emp_re_nation">
+      <columns>fk_nation_id</columns>
+      <ref-key>~.t_list_nation.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="50" parent="12" name="FK_emp_re_contract">
+      <columns>fk_contract_id</columns>
+      <ref-key>~.t_list_contract.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="51" parent="13" name="fk_emp_id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="52" parent="13" name="beginwork_date">
+      <comment>工作时间</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="53" parent="13" name="entry_date">
+      <comment>到院时间</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="54" parent="13" name="regist_date">
+      <comment>入编时间</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="55" parent="13" name="approval_doc">
+      <comment>批准文件</comment>
+      <data-type>longblob|0</data-type>
+    </column>
+    <column id="56" parent="13" name="approval_doc_no">
+      <comment>批准文号</comment>
+      <data-type>char(20)|0</data-type>
+    </column>
+    <column id="57" parent="13" name="id">
+      <comment>主键</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <index id="58" parent="13" name="FK_entry_re_emp">
+      <columns>fk_emp_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="59" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="60" parent="13" name="FK_entry_re_emp">
+      <columns>fk_emp_id</columns>
+      <ref-key>~.t_employee.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="61" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="62" parent="14" name="contract_type">
+      <mandatory>1</mandatory>
+      <data-type>char(20)|0</data-type>
+    </column>
+    <key id="63" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="64" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(2)|0</data-type>
+    </column>
+    <column id="65" parent="15" name="formation_type">
+      <comment>编制类型</comment>
+      <data-type>char(10)|0</data-type>
+    </column>
+    <key id="66" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="67" parent="16" name="nation">
+      <data-type>char(10)|0</data-type>
+    </column>
+    <column id="68" parent="16" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(5)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="69" parent="16" name="nation_no">
+      <data-type>char(2)|0</data-type>
+    </column>
+    <key id="70" parent="16" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="71" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(2)|0</data-type>
+    </column>
+    <column id="72" parent="17" name="in_out_way">
+      <mandatory>1</mandatory>
+      <data-type>char(20)|0</data-type>
+    </column>
+    <column id="73" parent="17" name="state_type">
+      <mandatory>1</mandatory>
+      <data-type>char(10)|0</data-type>
+    </column>
+    <column id="74" parent="17" name="approval_doc">
+      <data-type>longblob|0</data-type>
+    </column>
+    <column id="75" parent="17" name="approval_doc_no">
+      <data-type>char(20)|0</data-type>
+    </column>
+    <column id="76" parent="17" name="comment">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <key id="77" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="78" parent="18" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="79" parent="18" name="fk_emp_id">
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="80" parent="18" name="fk_dep_id">
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="81" parent="18" name="start_on">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="82" parent="18" name="in_use">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <index id="83" parent="18" name="FK_perdep_re_dep">
+      <columns>fk_dep_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="84" parent="18" name="FK_perdep_re_emp">
+      <columns>fk_emp_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="85" parent="18" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="86" parent="18" name="FK_perdep_re_emp">
+      <columns>fk_emp_id</columns>
+      <ref-key>~.t_employee.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="87" parent="18" name="FK_perdep_re_dep">
+      <columns>fk_dep_id</columns>
+      <ref-key>~.t_department_tree.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="88" parent="19" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="89" parent="19" name="fk_emp_id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="90" parent="19" name="fk_state_id">
+      <mandatory>1</mandatory>
+      <data-type>int(2)|0</data-type>
+    </column>
+    <column id="91" parent="19" name="start_on">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="92" parent="19" name="approval_doc_for_per">
+      <data-type>longblob|0</data-type>
+    </column>
+    <column id="93" parent="19" name="approval_doc_no">
+      <data-type>char(20)|0</data-type>
+    </column>
+    <column id="94" parent="19" name="comment">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="95" parent="19" name="come_from">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <index id="96" parent="19" name="FK_state_re_statetypes">
+      <columns>fk_state_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="97" parent="19" name="FK_t_person_state_info">
+      <columns>fk_emp_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="98" parent="19" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="99" parent="19" name="FK_stateinfo_re_emp">
+      <columns>fk_emp_id</columns>
+      <ref-key>~.t_employee.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="100" parent="19" name="FK_stateinfo_re_state">
+      <columns>fk_state_id</columns>
+      <ref-key>~.t_list_state.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="101" parent="20" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="102" parent="20" name="fk_emp_id">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="103" parent="20" name="fk_formation_id">
+      <mandatory>1</mandatory>
+      <data-type>int(2)|0</data-type>
+    </column>
+    <column id="104" parent="20" name="start_on">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="105" parent="20" name="comment">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <index id="106" parent="20" name="FK_pertype_re_emp">
+      <columns>fk_emp_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="107" parent="20" name="FK_pertype_re_formation">
+      <columns>fk_formation_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="108" parent="20" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="109" parent="20" name="FK_pertype_re_emp">
+      <columns>fk_emp_id</columns>
+      <ref-key>~.t_employee.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="110" parent="20" name="FK_pertype_re_formation">
+      <columns>fk_formation_id</columns>
+      <ref-key>~.t_list_formation_type.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="111" parent="21" name="科室层级">
+      <data-type>varchar(274)|0</data-type>
+    </column>
+    <column id="112" parent="21" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="113" parent="21" name="单位名称">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="114" parent="21" name="部门一级分类id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="115" parent="21" name="部门一级分类number">
+      <data-type>char(13)|0</data-type>
+    </column>
+    <column id="116" parent="21" name="部门一级分类">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="117" parent="21" name="部门一级分类up_dep_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="118" parent="21" name="部门二级分类id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="119" parent="21" name="部门二级分类number">
+      <data-type>char(13)|0</data-type>
+    </column>
+    <column id="120" parent="21" name="部门二级分类">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="121" parent="21" name="部门二级分类up_dep_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="122" parent="21" name="部门二级分类set_as">
+      <data-type>char(4)|0</data-type>
+    </column>
+    <column id="123" parent="21" name="院设科室id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="124" parent="21" name="院设科室number">
+      <data-type>char(13)|0</data-type>
+    </column>
+    <column id="125" parent="21" name="院设科室">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="126" parent="21" name="院设科室up_dep_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="127" parent="21" name="院设科室set_as">
+      <data-type>char(4)|0</data-type>
+    </column>
+    <column id="128" parent="21" name="二级科室id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(11)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="129" parent="21" name="二级科室number">
+      <data-type>varchar(13)|0</data-type>
+    </column>
+    <column id="130" parent="21" name="二级科室">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="131" parent="21" name="二级科室up_dep_id">
+      <data-type>varchar(11)|0</data-type>
+    </column>
+    <column id="132" parent="21" name="二级科室set_as">
+      <data-type>varchar(4)|0</data-type>
+    </column>
+    <column id="133" parent="22" name="身份证号">
+      <mandatory>1</mandatory>
+      <data-type>char(18)|0</data-type>
+    </column>
+    <column id="134" parent="22" name="姓名">
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="135" parent="22" name="生日">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="136" parent="22" name="名族">
+      <data-type>char(10)|0</data-type>
+    </column>
+    <column id="137" parent="22" name="部门">
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="138" parent="22" name="1医编2教编">
+      <data-type>int(2)|0</data-type>
+    </column>
+    <column id="139" parent="23" name="full_name">
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="140" parent="23" name="start_on">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="141" parent="23" name="state_type">
+      <mandatory>1</mandatory>
+      <data-type>char(10)|0</data-type>
+    </column>
+    <column id="142" parent="23" name="in_out_way">
+      <mandatory>1</mandatory>
+      <data-type>char(20)|0</data-type>
+    </column>
+  </database-model>
+</dataSource>

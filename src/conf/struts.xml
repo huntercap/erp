@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+<!--    struts.enable.DynamicMethodInvocation = true，-动态方法调用，
+    为true时，就可以在struts.xml配置“*”的通配符，来调用action里的方法-->
+    <!--<constant name="struts.enable.DynamicMethodInvocation" value="false" />-->
+    <!--struts.devMode是开发模式。当正的发布版本的时候要设置为false-->
+    <!--<constant name="struts.devMode" value="true"/>-->
+
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="emp-*" class="com.cx.erp.action.EmployeeAction" method="{1}">
+            <result name="list">/WEB-INF/views/emp-list.jsp</result>
+        </action>
+    </package>
+</struts>

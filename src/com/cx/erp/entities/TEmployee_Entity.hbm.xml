@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cx.erp.entities.TEmployee_Entity" table="t_employee">
+        <id name="id">
+            <column name="id" sql-type="int(6)"/>
+            <generator class="native"/>
+        </id>
+        <property name="jobNo">
+            <column name="job_no" sql-type="char(10)" length="10" not-null="true"/>
+        </property>
+        <property name="salaryId">
+            <column name="salary_id" sql-type="int(6)" not-null="true"/>
+        </property>
+        <property name="fullName">
+            <column name="full_name" sql-type="char(50)" length="50"/>
+        </property>
+        <property name="idNo">
+            <column name="id_no" sql-type="char(18)" length="18"/>
+        </property>
+        <property name="birthDate">
+            <column name="birth_date" sql-type="date"/>
+        </property>
+        <property name="endowmentNo">
+            <column name="endowment_no" sql-type="char(20)" length="20" not-null="true"/>
+        </property>
+        <property name="gender">
+            <column name="gender" sql-type="char(2)" length="2" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

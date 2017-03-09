@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="EmployeeDao" class="com.cx.erp.dao.EmployeeDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="EmployeeService" class="com.cx.erp.service.EmployeeService">
+        <property name="employeeDao" ref="EmployeeDao"></property>
+    </bean>
+
+    <bean id="EmployeeAction" class="com.cx.erp.action.EmployeeAction"
+            scope="prototype">
+        <property name="employeeService" ref="EmployeeService"></property>
+    </bean>
+
+</beans>
