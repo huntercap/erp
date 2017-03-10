@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cx.erp.entities.TListState_Entity" table="t_list_state" schema="person">
+        <id name="id">
+            <column name="id" sql-type="int(2)"/>
+        </id>
+        <property name="inOutWay">
+            <column name="in_out_way" sql-type="char(20)" length="20"/>
+        </property>
+        <property name="stateType">
+            <column name="state_type" sql-type="char(10)" length="10"/>
+        </property>
+        <property name="approvalDoc">
+            <column name="approval_doc" sql-type="longblob" not-null="true"/>
+        </property>
+        <property name="approvalDocNo">
+            <column name="approval_doc_no" sql-type="char(20)" length="20" not-null="true"/>
+        </property>
+        <property name="comment">
+            <column name="comment" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

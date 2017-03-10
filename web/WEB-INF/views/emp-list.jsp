@@ -75,7 +75,7 @@
                 <td>${gender}</td>
                 <td>${nation.nation}</td>
                 <td>${contract.contractType}</td>
-
+                <td>${entryInfo.fk_emp_id}</td>
                 <%--format值中年月日格式化format="yyyy-MM-dd"，
                 月一定要用大写"MM",小写“m”表示秒--%>
                 <td>

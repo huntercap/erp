@@ -19,6 +19,15 @@ public class TEmployee_Entity {
 
     private TListNation_Entity nation;
     private TListContract_Entity contract;
+    private TEntryInfo_Entity entryInfo;
+
+    public TEntryInfo_Entity getEntryInfo() {
+        return entryInfo;
+    }
+
+    public void setEntryInfo(TEntryInfo_Entity entryInfo) {
+        this.entryInfo = entryInfo;
+    }
 
     public TListContract_Entity getContract() {
         return contract;

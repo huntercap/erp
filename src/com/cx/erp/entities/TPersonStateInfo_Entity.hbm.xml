@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cx.erp.entities.TPersonStateInfo_Entity" table="t_person_state_info" schema="person">
+        <id name="id">
+            <column name="id" sql-type="int(6)"/>
+        </id>
+        <property name="startOn">
+            <column name="start_on" sql-type="date" not-null="true"/>
+        </property>
+        <property name="approvalDocForPer">
+            <column name="approval_doc_for_per" sql-type="longblob" not-null="true"/>
+        </property>
+        <property name="approvalDocNo">
+            <column name="approval_doc_no" sql-type="char(20)" length="20" not-null="true"/>
+        </property>
+        <property name="comment">
+            <column name="comment" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="comeFrom">
+            <column name="come_from" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <many-to-one name="tListStateByFkStateId" class="com.cx.erp.entities.TListState_Entity">
+            <column name="fk_state_id"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

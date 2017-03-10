@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cx.erp.entities.TEntryInfo_Entity" table="t_entry_info" schema="person">
+        <id name="id">
+            <column name="id" sql-type="int(10)"/>
+        </id>
+        <property name="beginworkDate">
+            <column name="beginwork_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="entryDate">
+            <column name="entry_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="registDate">
+            <column name="regist_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="approvalDoc">
+            <column name="approval_doc" sql-type="longblob" not-null="true"/>
+        </property>
+        <property name="approvalDocNo">
+            <column name="approval_doc_no" sql-type="char(20)" length="20" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
