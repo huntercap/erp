@@ -18,6 +18,15 @@ public class TEmployee_Entity {
     private String gender;
 
     private TListNation_Entity nation;
+    private TListContract_Entity contract;
+
+    public TListContract_Entity getContract() {
+        return contract;
+    }
+
+    public void setContract(TListContract_Entity contract) {
+        this.contract = contract;
+    }
 
     public TListNation_Entity getNation() {
         return nation;

@@ -59,6 +59,7 @@
             <td>fullName</td>
             <td>gender</td>
             <td>民族</td>
+            <td>编制类型</td>
             <td>birthDate</td>
             <td>jobNo</td>
             <td>salaryId</td>
@@ -73,6 +74,7 @@
                 <td>${fullName}</td>
                 <td>${gender}</td>
                 <td>${nation.nation}</td>
+                <td>${contract.contractType}</td>
 
                 <%--format值中年月日格式化format="yyyy-MM-dd"，
                 月一定要用大写"MM",小写“m”表示秒--%>

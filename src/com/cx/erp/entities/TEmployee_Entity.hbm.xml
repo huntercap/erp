@@ -34,6 +34,9 @@
         <many-to-one name="nation" class="com.cx.erp.entities.TListNation_Entity">
             <column name="fk_nation_id"/>
         </many-to-one>
+        <many-to-one name="contract" class="com.cx.erp.entities.TListContract_Entity">
+            <column name="fk_contract_id"/>
+        </many-to-one>
 
     </class>
 </hibernate-mapping>
