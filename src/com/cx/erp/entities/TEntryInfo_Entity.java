@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2017/3/11.
+ * Created by Administrator on 2017/3/12.
  */
 @Entity
 @Table(name = "t_entry_info", schema = "person", catalog = "")

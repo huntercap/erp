@@ -1,6 +1,8 @@
 package com.cx.erp.entities;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -19,13 +21,14 @@ public class TEmployee_Entity {
 
     private TListNation_Entity nation;
     private TListContract_Entity contract;
-    private TEntryInfo_Entity entryInfo;
 
-    public TEntryInfo_Entity getEntryInfo() {
+    private Set<TEntryInfo_Entity> entryInfo = new HashSet<TEntryInfo_Entity>();
+
+    public Set<TEntryInfo_Entity> getEntryInfo() {
         return entryInfo;
     }
 
-    public void setEntryInfo(TEntryInfo_Entity entryInfo) {
+    public void setEntryInfo(Set<TEntryInfo_Entity> entryInfo) {
         this.entryInfo = entryInfo;
     }
 
