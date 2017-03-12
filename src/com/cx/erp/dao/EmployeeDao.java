@@ -11,6 +11,12 @@ public class EmployeeDao extends BaseDao {
 
     public List<TEmployee_Entity> getAll(){
         String hql = "from TEmployee_Entity e left outer join FETCH e.nation left outer join FETCH e.contract left outer join FETCH e.entryInfo";
-        return getSession().createQuery(hql).list();
+
+        return getSession()
+                .createQuery(hql)
+                .setFirstResult(1545)
+                .setMaxResults(100)
+                .list();
+
     }
 }

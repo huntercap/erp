@@ -75,12 +75,8 @@
                 <td>${gender}</td>
                 <td>${nation.nation}</td>
                 <td>${contract.contractType}</td>
-                <s:iterator value="#request.employees.entryInfo">
-                    <tr><td><s:property value="registDate"/></td></tr>
-                </s:iterator>
-                
                 <%--format值中年月日格式化format="yyyy-MM-dd"，
-                月一定要用大写"MM",小写“m”表示秒--%>
+                月一定要用大写"MM",小写“m”表示秒;--%>
                 <td>
                     <s:date name="birthDate" format="yyyy-MM-dd"/><%--format="yyyy-mm-dd"--%>
                 </td>
@@ -88,8 +84,12 @@
                 <td>${salaryId}</td>
                 <td>${idNo}</td>
                 <td>${endowmentNo}</td>
+                <td>
+                    <s:iterator value="entryInfo">
+                        <td>${registDate}</td>
+                    </s:iterator>
+                </td>
 
-               <%-- <td>${department.departmentName}</td>--%>
                 <td>
                     <a href="emp-delete?id=${id} " class="delete">删除</a>
                     <input type="hidden" value="${lastName} "/>
@@ -98,6 +98,7 @@
                     <a href="emp-input?id=${id}">修改</a>
                 </td>
             </tr>
+
         </s:iterator>
     </table>
 </s:else>
