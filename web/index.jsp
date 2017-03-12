@@ -15,7 +15,13 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="easyUI1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="easyUI1.5/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyUI1.5/locale/easyui-lang-zh_CN.js"></script>
 	<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="easyUI1.5/themes/default/easyui.css" type="text/css">
+	<link rel="stylesheet" href="easyUI1.5/themes/icon.css" type="text/css">
+
 </head>
 
 <body class="">
