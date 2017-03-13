@@ -18,6 +18,13 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
+
+    <script type="text/javascript" src="easyUI1.5/jquery.min.js"></script>
+    <script type="text/javascript" src="easyUI1.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="easyUI1.5/locale/easyui-lang-zh_CN.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="easyUI1.5/themes/default/easyui.css" type="text/css">
+    <link rel="stylesheet" href="easyUI1.5/themes/icon.css" type="text/css">
     <script type="text/javascript">
         $(function(){
             //1. 点击 delete 时, 弹出 确定是要删除 xx 的信息吗 ? 若确定, 执行删除, 若不确定, 则取消
@@ -53,7 +60,7 @@
 没有任何员工信息
 </s:if>
 <s:else>
-    <table style="margin: 0px" class="table table-hover table-bordered">
+    <table class=""
         <tr>
             <td>id</td>
             <td>fullName</td>
@@ -100,6 +107,7 @@
             </tr>
 
         </s:iterator>
+
     </table>
 </s:else>
 
