@@ -4,6 +4,7 @@ import com.cx.erp.service.EmployeeService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.RequestAware;
 
+
 import java.util.Map;
 
 /**
@@ -31,6 +32,7 @@ public class EmployeeAction extends ActionSupport implements RequestAware
         System.out.println(request.toString());
         //System.out.println(employeeService.toString());
         this.request.put("employees",employeeService.getAll());
+        System.out.println(net.sf.json.JSONArray.fromObject(employeeService.getAll()));
         return "list";
     }
 

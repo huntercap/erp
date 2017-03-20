@@ -21,6 +21,7 @@
 	<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" href="easyUI1.5/themes/default/easyui.css" type="text/css">
 	<link rel="stylesheet" href="easyUI1.5/themes/icon.css" type="text/css">
+	<link rel="stylesheet" href="js/index.js" >
 
 </head>
 
@@ -75,6 +76,16 @@
 	</ul>
 </div>
 <!-- 16:9 aspect ratio -->
+<div id="p" class="easyui-panel" title="My Panel"
+	 style="width:500px;height:150px;padding:10px;background:#fafafa;"
+	 data-options="iconCls:'icon-save',
+	 				closable:true,
+                	collapsible:true,
+                	minimizable:true,
+                	maximizable:true">
+
+</div>
+
 <div id="mainFrom">
 
 	<P>
@@ -90,27 +101,54 @@
 <div class="embed-responsive-4by3">
 	<iframe id="inputForm"></iframe>
 </div>
+<div class="easyui-layout" style="width:400px;height:200px;">
+    <div region="west" split="true" title="Navigator" style="width:150px;">
+        <p style="padding:5px;margin:0;">Select language:</p>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showcontent('java')">Java</a></li>
+            <li><a href="javascript:void(0)" onclick="showcontent('cshape')">C#</a></li>
+            <li><a href="javascript:void(0)" onclick="showcontent('vb')">VB</a></li>
+            <li><a href="javascript:void(0)" onclick="showcontent('erlang')">Erlang</a></li>
+        </ul>
+    </div>
+    <div id="content" region="center" title="Language" style="padding:5px;">
+    </div>
+</div>
+<table id="tt">
 
-<!--
-    <a href="emp-list">List All Employees</a>
+</table>
 
-    <br><br>
-
-    <a href="emp-input">Add New Employee</a>
-    -->
 <script>
+
 	$(document).ready(function () {
 
 		$("#listForm").attr("src", "/emp-list");
 		$("#inputForm").attr("src", "/emp-input");
-		alert("nihao");
+		alert("nihao55");
 		$("#mainFrom").hide();
-		/*        $("#mainFrom").innerHTML=
+		       /*/!* $("#mainFrom").innerHTML=
 		 $.get("/emp-list",function(data,status){
 		 alert("数据: " + data + "\n状态: " + status);
-		 });
+		 });*!/*/
 
-		 });*/
+
+        $('#tt').datagrid({
+            width : 400,
+            title : '用户列表',
+            columns : [[
+                {
+                    field : 'id',
+                    title : 'id号',
+                },{
+                    field : 'fullName',
+                    title : '姓名',
+                },{
+                    field : 'gender',
+                    title : '性别',
+                }
+            ]]
+        })
+
 	});
 
 </script>
