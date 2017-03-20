@@ -83,5 +83,7 @@
     <orderEntry type="library" name="commons-logging-1.1.1" level="application" />
     <orderEntry type="library" scope="RUNTIME" name="spring4hibernate4struts2c3p0jdbclogging" level="application" />
     <orderEntry type="library" name="sshLibs" level="application" />
+    <orderEntry type="library" name="struts2-json-plugin-2.3.31" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.3.1" level="application" />
   </component>
 </module>
