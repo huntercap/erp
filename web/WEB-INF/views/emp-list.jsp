@@ -18,13 +18,6 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
-
-    <script type="text/javascript" src="easyUI1.5/jquery.min.js"></script>
-    <script type="text/javascript" src="easyUI1.5/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="easyUI1.5/locale/easyui-lang-zh_CN.js"></script>
-    <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="easyUI1.5/themes/default/easyui.css" type="text/css">
-    <link rel="stylesheet" href="easyUI1.5/themes/icon.css" type="text/css">
     <script type="text/javascript">
         $(function(){
             //1. 点击 delete 时, 弹出 确定是要删除 xx 的信息吗 ? 若确定, 执行删除, 若不确定, 则取消
@@ -57,10 +50,10 @@
 <h4>Employee List Page!</h4>
 <s:debug></s:debug>
 <s:if test="#request.employees == null || #request.employees.size() == 0">
-没有任何员工信息
+    没有任何员工信息
 </s:if>
 <s:else>
-    <table class=""
+    <table style="margin: 0px" class="table table-hover table-bordered">
         <tr>
             <td>id</td>
             <td>fullName</td>
@@ -82,8 +75,8 @@
                 <td>${gender}</td>
                 <td>${nation.nation}</td>
                 <td>${contract.contractType}</td>
-                <%--format值中年月日格式化format="yyyy-MM-dd"，
-                月一定要用大写"MM",小写“m”表示秒;--%>
+                    <%--format值中年月日格式化format="yyyy-MM-dd"，
+                    月一定要用大写"MM",小写“m”表示秒;--%>
                 <td>
                     <s:date name="birthDate" format="yyyy-MM-dd"/><%--format="yyyy-mm-dd"--%>
                 </td>
@@ -93,8 +86,8 @@
                 <td>${endowmentNo}</td>
                 <td>
                     <s:iterator value="entryInfo">
-                        <td>${registDate}</td>
-                    </s:iterator>
+                <td>${registDate}</td>
+                </s:iterator>
                 </td>
 
                 <td>
@@ -107,7 +100,6 @@
             </tr>
 
         </s:iterator>
-
     </table>
 </s:else>
 

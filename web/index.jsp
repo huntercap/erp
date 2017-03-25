@@ -1,7 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2017/1/31
+  User: Administrator  Date: 2017/1/31
   Time: 2:53
   To change this template use File | Settings | File Templates.
 --%>
