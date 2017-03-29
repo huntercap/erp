@@ -16,7 +16,7 @@
         <action name="emp-*"
                 class="com.cx.erp.action.EmployeeAction"
                 method="{1}">
-            <result name="list" type="json">/index.jsp</result>
+            <result type="json"/>
         </action>
     </package>
 </struts>
