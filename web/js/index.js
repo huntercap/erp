@@ -55,19 +55,22 @@ Ext.onReady(function () {
             xtype: 'maintop',//引入Top
         }, {
             region: 'west',
+            layout:{type:'accordion'},
             split: true,
-            weight:100,//加入权重后，panel占据整个左边
+            weight: 100,//加入权重后，panel占据整个左边
             collapsible: true,
             title: 'Navigation',
             width: 150,
-            items:[
+            items: [
                 {
-                title:'项目资源管理器',
-                closable:true,
-                listeners:{itemclick:itemOnClick}
+                    title: '项目资源管理器',
+
+                    id: 'id1',
+                    closable: true,
+                    listeners: {itemclick: itemclick}
                 },
 
-    ],
+            ],
             // could use a TreePanel or AccordionLayout for navigational items
         }, {
             region: 'south',
@@ -89,7 +92,7 @@ Ext.onReady(function () {
             activeTab: 0, // First tab active by default
             items: {
                 title: 'Default Tab',
-                closable:true,
+                closable: true,
                 html: '<div id="gridPanel">The first tab\'s content. Others may be added dynamically这里是gridPanel</div>',
                 xtype: 'gridList',//引入gridPanel
             }
@@ -98,8 +101,8 @@ Ext.onReady(function () {
 
 });
 
-var itemOnClick = function (view,node) {
-    alert(view + node);
+var itemclick = function (view, node) {
+    alert(view + node.data.id);
 }
 /*title:'面板头部(header)',
  tbar:['顶端工具栏（top toolbars）',

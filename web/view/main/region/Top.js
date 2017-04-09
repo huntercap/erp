@@ -8,30 +8,30 @@ Ext.define(
                 text: '首页',
                 glyph: 0xf015,//首页图标
             }, {
-                text : '帮助',
-                glyph : 0xf059
+                text: '帮助',
+                glyph: 0xf059
             }, {
-                text : '关于',
-                glyph : 0xf05a
+                text: '关于',
+                glyph: 0xf05a
             },
             {
                 xtype: 'textfield',//默认是一个button所以其他都没写
                 name: 'searchField',
                 emptyText: '输入您的搜索关键词'
             }, {
-                text : '搜索',
-                glyph : 0xf00e
-            }, '->',{
-                text : '用户登录',
-                glyph : 0xf007
-            },{
-                text : '注销',
-                glyph : 0xf011
+                text: '搜索',
+                glyph: 0xf00e
+            }, '->', {
+                text: '用户登录',
+                glyph: 0xf007
             }, {
-                glyph : 0xf102,
-                handler : 'hiddenTopBottom',
-                tooltip : '隐藏顶部和底部区域',
-                disableMouseOver : true
+                text: '注销',
+                glyph: 0xf011
+            }, {
+                glyph: 0xf102,
+                handler: 'hiddenTopBottom',
+                tooltip: '隐藏顶部和底部区域',
+                disableMouseOver: true
             }
         ]
     }
@@ -49,7 +49,17 @@ Ext.define(
         height: 170,
         frame: true,
         store: {
-            fields: ['fullName', 'id', 'gender', 'birthDate'],
+            fields: [
+                'id',
+                {name: 'fullName'},
+                'gender',
+                {name: 'birthDate'},
+                'jobNo',
+                'salaryId',
+                'endowmentNo',
+                {name: 'contract.contractType',mapping:'contract.contractType'},//读取json子节点使用此映射
+                {name: 'nation.nation',mapping:'nation.nation'}
+            ],
             proxy: {
                 type: 'ajax',
                 url: '/emp-list',
@@ -62,9 +72,29 @@ Ext.define(
         },
         columns: [//配置表格列
             new Ext.grid.RowNumberer(),//表格行号组件
-            {header: "姓名", width: 80, dataIndex: 'fullName', sortable: true},
-            {header: "年龄", width: 80, dataIndex: 'id', sortable: true},
-            {header: "性别", width: 80, dataIndex: 'gender', sortable: true},
-            {header: "生日", width: 80, dataIndex: 'birthDate', sortable: true}
-        ],
-    });
+            {text: "ID", width: 80, align: 'center', dataIndex: 'id', sortable: true},
+            {
+                text: '个人信息', flex:1,columns:[
+                    {text: "姓名", width: 80, align: 'center', dataIndex: 'fullName', sortable: true},
+                    {text: "性别", width: 80, align: 'center', dataIndex: 'gender', sortable: true},
+                    {
+                        text: "生日",
+                        flex: 1,
+                        align: 'center',
+                        dataIndex: 'birthDate',
+                        renderer: Ext.util.Format.dateRenderer('Y-m-d'),
+                        sortable: true
+                    },
+                    {text: "民族", width: 80, align: 'center', dataIndex: 'nation.nation', sortable: true},
+                    {text: '养保号', width: 80, align: 'center', dataIndex: 'endowmentNo', sortable: true}
+                ]
+            },
+            {
+                text: '单位属性', flex:1, columns:[
+                    {text: '编制', width: 80, align: 'center', dataIndex: 'contract.contractType', sortable: true},
+                    {text: '工号', width: 80, align: 'center', dataIndex: 'jobNo', sortable: true},
+                    {text: '工资号', width: 80, align: 'center', dataIndex: 'salaryId', sortable: true}
+                ]
+            }
+        ]
+});
