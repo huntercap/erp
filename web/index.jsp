@@ -10,9 +10,9 @@
     &lt;%&ndash;<script type="text/javascript" src="../Ext4/ext-all-debug.js"></script>&ndash;%&gt;--%>
     <%--以下文件引入顺序不能错--%>
     <link rel="stylesheet" type="text/css" href="../Ext6.2/build/classic/theme-crisp/resources/theme-crisp-all.css">
-    <script type="text/javascript" src="../Ext6.2/build/ext-all.js"></script>
-    <script type="text/javascript" src="../Ext6.2/build/classic/theme-crisp/theme-crisp.js"></script>
-    <script type="text/javascript" src="../Ext6.2/build/classic/locale/locale-zh_CN.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../Ext6.2/build/ext-all.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../Ext6.2/build/classic/theme-crisp/theme-crisp.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../Ext6.2/build/classic/locale/locale-zh_CN.js"></script>
 
 
 
