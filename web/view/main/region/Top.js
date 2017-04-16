@@ -1,5 +1,5 @@
 Ext.define(
-    'erpSystem.view.main.region.Top',//ClassName 类名，需要与文件目录对应起来，oaSystem是应用程序的名称，这是说在view/main/region目录下，新建立了一个Top.js文件
+    'Erp.view.main.region.Top',//ClassName 类名，需要与文件目录对应起来，oaSystem是应用程序的名称，这是说在view/main/region目录下，新建立了一个Top.js文件
     {
         extend: 'Ext.toolbar.Toolbar',//继承自Ext的工具条，可以有工具条的属性了，避免自己书写麻烦
         alias: 'widget.maintop',//别名，后期可以进行访问
@@ -44,6 +44,7 @@ Ext.define(
  alias:
  }
  );*/
+
 
 Ext.define('grid',{
         extend: 'Ext.grid.Panel',

@@ -45,7 +45,12 @@
  });
  */
 Ext.onReady(function () {
-    //var gridMainPanel = Ext.create('gridPanel');
+    alert('111');
+    var personInfoModel = Ext.create('Ext.data.Model',{
+        xtype:'pInfo'//会自动载入
+    });
+    alert(personInfoModel.id);
+    alert('333');
     Ext.create('Ext.container.Viewport', {
         layout: 'border',
         items: [{
